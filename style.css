@@ -9,10 +9,6 @@ main {
     min-height: 100vh;
 }
 
-.wrapper {
-    border: solid 1px gray;
-    
-}
 
 .carousel-example img {
     width: 400px;
@@ -32,4 +28,48 @@ main {
 .card > h1 {
     font-size: 4rem;
     font-weight: 700;
+}
+
+.owl-dot {
+    width: 1.2rem;
+    height: 1.2rem;
+    border: solid 2px lightgreen !important;
+    background-color: transparent !important;
+    border-radius: 50%;
+    outline: none;
+    transition: background-color 0.3s;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.owl-dots {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.owl-dot.active {
+    background-color: lightgreen !important;
+}
+
+.owl-nav {
+    text-align: center;
+}
+
+.owl-nav .owl-prev, .owl-nav .owl-next {
+    height: 2rem;
+    width: 6rem;
+    border-radius: 25px;
+    color: lightgreen !important;
+    border: solid 2px lightgreen !important;
+    background-color: transparent !important;
+    font-weight: 700;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    outline: none;
+    transition: 0.3s;
+}
+
+.owl-nav .owl-prev:active, .owl-nav .owl-next:active {
+    background-color: lightgreen !important;
+    color: darkslategray !important;
 }
