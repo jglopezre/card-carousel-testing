@@ -13,8 +13,8 @@ This page was performed to make several test over OWL-Carousel plug-in, like get
 > ## Steps for using interface
 > - In Card field, we have tu put a number to give information about many cards we want to show.  
 > - Then, we have to check many options to configure next carousel appearing, it is recomended that check at least one option of Dots Enable, Nav Button or Dragable, for make possible to interact with carousel. It is able to select only Autoplay for automatic carousel translate.  
-> - When options was checked, we ahve to click on Enter button to create a carousel. Inmediately this will created with random colored cards.  
-> - For create another carousel we have to click reload button on the Brpwser to reload app.  
+> - When options was checked, we have to click on Enter button to create a carousel. Inmediately this will created with random colored cards.  
+> - For create another carousel we have to click reload button on the Browser to reload app.  
 
 ***
 
