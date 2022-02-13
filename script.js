@@ -1,4 +1,19 @@
 $(document).ready(() => {
+    const $checkDots = $('#dots-check');
+    const $checkNav = $('#nav-check');
+    const $checkDrag = $('#drag-check');
+    const $checkAutoplay = $('#auto-play-check');
+    const $checkRewind = $('#rewind-check');
+    const $checkLoop = $('#loop-check');
+    const $checkCenter = $('#center-check');
+    const $checkIndicator = $('#indicator-check');
+    const $checkScaling = $('#scaling-check')
+    const $inputField = $('#input-field-01');
+    const $cardsIndicator = $("#cards-indicator");
+
+    const date = new Date();
+
+    $('#today-date').text(date.getFullYear());
 
     const cardGenerator = (boxCount) => {
         for (let i = 0; i < boxCount; i++) {
@@ -7,22 +22,33 @@ $(document).ready(() => {
             
         let cardArr = Array.from($('.card'));
         
-        cardArr.forEach((d) => {
-            d.style.backgroundColor = `rgb( ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
+        cardArr.forEach((element) => {
+            element.style.backgroundColor = `rgb( ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
         });
     }
-    
+
+    const modifyItem = (event) => {
+        let itemCount = event.item.count;
+        let itemIndex = event.item.index;
+
+        if ($checkIndicator.prop('checked')) {
+            $cardsIndicator.html(`<h1>${itemIndex + 1} / ${itemCount}</h1>`);
+        }
+
+        if($checkScaling.prop('checked')) {
+            let cardArr = Array.from($('.card'));
+            cardArr.forEach((element, index) => {
+                if (itemIndex === index) {
+                    element.style.transform = 'scale(1.1)';
+                } else {
+                    element.style.transform = 'scale(1)';
+                }
+            })
+        }
+    }
+     
     $('#action-button-01').click( (element) => {
         element.preventDefault();
-
-        const $checkDots = $('#dots-check');
-        const $checkNav = $('#nav-check');
-        const $checkDrag = $('#drag-check');
-        const $checkAutoplay = $('#auto-play-check');
-        const $checkRewind = $('#rewind-check');
-        const $checkLoop = $('#loop-check');
-        const $checkCenter = $('#center-check');
-        const $inputField = $('#input-field-01');
 
         $checkDots.attr('disabled', 'true');
         $checkNav.attr('disabled', 'true');
@@ -31,16 +57,16 @@ $(document).ready(() => {
         $checkRewind.attr('disabled', 'true');
         $checkLoop.attr('disabled', 'true');
         $checkCenter.attr('disabled', 'true');
+        $checkScaling.attr('disabled', 'true');
+        $checkIndicator.attr('disabled', 'true');
         $inputField.attr('disabled', 'true');
         
-
-
         cardGenerator( parseInt($inputField.prop('value')) );
         
         $('#action-button-01').attr('disabled', 'true'); //Disables action button
 
-        let carousel01 = $('#carousel-01').owlCarousel({
-            margin: 15,
+        $('#carousel-01').owlCarousel({
+            margin: 30,
             center: $checkCenter.prop('checked'),
             loop: $checkLoop.prop('checked'),
             nav: $checkNav.prop('checked'),
@@ -51,6 +77,7 @@ $(document).ready(() => {
             autoplayHoverPause: true,
             rewind: $checkRewind.prop('checked'),
             mouseDrag: $checkDrag.prop('checked'),
+            onTranslated: modifyItem,
             responsiveClass: true,
             responsiveBaseElement: ".wrapper",
             responsive: {

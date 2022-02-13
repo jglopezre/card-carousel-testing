@@ -8,22 +8,32 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@700&family=Titillium+Web:wght@400;600;700&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="style.css">
 </head>
 <body> 
     <main class="container main-container">
-        <div class="row">
+        <div class="row my-3">
+            <div class="col-lg-8 offset-lg-2">
+                <div class="title w-100">
+                    <h1>Owl Carousel Test page</h1>
+                </div>
+            </div>
+        </div>
+        <div class="row my-2">
             <div class="col-12 d-flex justify-content-center my-4">
                 <form class="form-inline">
                     <div class="form-group">
                         <label for="input-field-01">Cards</label>
-                        <input id="input-field-01" type="number" class="form-control">
+                        <input id="input-field-01" type="number" class="form-control ml-3" required>
                     </div>
                     <button id="action-button-01" class="btn btn-primary">Enter</button>
                 </form>
             </div>
         </div>
-        <div class="row">
+        <div class="row my-2">
             <div class="col offset-lg-2">
                 <div class="form-check">
                     <input type="checkbox" class="form-check-input" id="dots-check">
@@ -57,21 +67,23 @@
                     <input type="checkbox" class="form-check-input" id="center-check">
                     <label for="center-check" class="form-check-label">Center Enabled</label>
                 </div>
-                <!-- <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="rewind-check">
-                    <label for="rewind-check" class="form-check-label">Rewind Enabled</label>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="scaling-check">
+                    <label for="scaling-check" class="form-check-label">Scaling Active</label>
                 </div>
                 <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="drag-check">
-                    <label for="drag-check" class="form-check-label">Dragable</label>
-                </div> -->
+                    <input type="checkbox" class="form-check-input" id="indicator-check">
+                    <label for="indicator-check" class="form-check-label">Indicator Enabled</label>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-1">
-                <!-- CARDS INDICATOR HERE -->
+        <div class="row my-2">
+            <div class="col-lg-1 d-flex justify-content-center align-items-center">
+                <div id="cards-indicator" class="number-indicator">
+                    <!-- CARDS INDICATOR HERE -->
+                </div>
             </div>
-            <div class="wrapper col-lg-10 offset-lg-1 ">
+            <div class="wrapper col-lg-10">
                 <div id="carousel-01" class="owl-carousel">
                     <!-- ITEM BOXES JAVASCRIPT GENERATED HERE -->
                 </div>
@@ -79,6 +91,14 @@
             
         </div>
     </main>
+
+    <footer class="container-fluid">
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center align-items-baseline">
+                <p><span id="today-date"><!-- YEAR --></span> Designed and developed by <a href="http:javierlo.site">Javier Lopez</a></p>
+            </div>
+        </div>
+    </footer>
     
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
